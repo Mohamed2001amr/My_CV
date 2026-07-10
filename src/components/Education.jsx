@@ -1,5 +1,6 @@
 import { GraduationCap, Calendar, Award } from 'lucide-react';
 import { educationData } from '../data/portfolioData';
+import Reveal from './Reveal';
 
 export default function Education() {
   return (
@@ -10,43 +11,45 @@ export default function Education() {
           subtitle="My academic background and qualifications"
         />
 
-        <div className="max-w-3xl mx-auto">
-          <div className="bg-slate-50 rounded-2xl border border-slate-100 overflow-hidden hover:shadow-lg transition-shadow">
-            <div className="flex flex-col sm:flex-row">
-              <div className="sm:w-48 shrink-0 bg-[#1a2b5f] flex items-center justify-center p-6">
-                <img
-                  src={educationData.logo}
-                  alt={`${educationData.university} logo`}
-                  className="w-full max-w-[140px] object-contain"
-                />
-              </div>
-
-              <div className="flex-1 p-6 sm:p-8">
-                <div className="flex items-start gap-3 mb-4">
-                  <div className="p-2 bg-blue-100 text-blue-600 rounded-lg shrink-0">
-                    <GraduationCap size={22} />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900">{educationData.degree}</h3>
-                    <p className="text-blue-600 font-medium mt-1">{educationData.university}</p>
-                  </div>
+        <Reveal variant="popup" delay={100}>
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-slate-50 rounded-2xl border border-slate-100 overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="flex flex-col sm:flex-row">
+                <div className="sm:w-48 shrink-0 bg-[#1a2b5f] flex items-center justify-center p-6">
+                  <img
+                    src={educationData.logo}
+                    alt={`${educationData.university} logo`}
+                    className="w-full max-w-[140px] object-contain"
+                  />
                 </div>
 
-                <div className="flex flex-wrap gap-4 text-sm text-slate-500 mb-4">
-                  <span className="flex items-center gap-1.5">
-                    <Calendar size={15} className="text-slate-400" />
-                    {educationData.period}
-                  </span>
-                </div>
+                <div className="flex-1 p-6 sm:p-8">
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className="p-2 bg-blue-100 text-blue-600 rounded-lg shrink-0">
+                      <GraduationCap size={22} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-slate-900">{educationData.degree}</h3>
+                      <p className="text-blue-600 font-medium mt-1">{educationData.university}</p>
+                    </div>
+                  </div>
 
-                <div className="flex flex-wrap gap-3">
-                  <Badge icon={<Award size={14} />} label="Graduation Grade" value={educationData.grade} />
-                  <Badge icon={<Award size={14} />} label="Graduation Project" value={educationData.graduationProject} />
+                  <div className="flex flex-wrap gap-4 text-sm text-slate-500 mb-4">
+                    <span className="flex items-center gap-1.5">
+                      <Calendar size={15} className="text-slate-400" />
+                      {educationData.period}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-wrap gap-3">
+                    <Badge icon={<Award size={14} />} label="Graduation Grade" value={educationData.grade} />
+                    <Badge icon={<Award size={14} />} label="Graduation Project" value={educationData.graduationProject} />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -54,11 +57,11 @@ export default function Education() {
 
 function SectionHeader({ title, subtitle }) {
   return (
-    <div className="text-center mb-12">
+    <Reveal variant="blur" className="text-center mb-12">
       <h2 className="text-3xl font-bold text-slate-900 mb-3">{title}</h2>
       <p className="text-slate-500">{subtitle}</p>
       <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full" />
-    </div>
+    </Reveal>
   );
 }
 

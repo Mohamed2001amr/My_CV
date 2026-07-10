@@ -96,6 +96,16 @@ export const projectsData = [
       'Contributed to product roadmap creation, requirement analysis, database design, and development of the UI, backend, and APIs for a Governance, Risk, and Compliance (GRC) solution as part of a collaborative team.',
     ],
     tools: ['React', '.NET', 'SQL Server', 'Figma', 'Git'],
+    links: [
+      {
+        label: 'View Live Demo',
+        url: 'https://tstapp.simplgrc.com/login',
+      },
+    ],
+    credentials: {
+      email: 'SystemAdmin@gmail.com',
+      password: 'P@ss1234##',
+    },
   },
   {
     id: 'buc-bpmn',
@@ -132,6 +142,24 @@ export const projectsData = [
       'Designed forms, communication templates, and work rules for each department.',
     ],
     tools: ['Visio', 'BPMN v2', 'Microsoft Excel', 'Microsoft Word'],
+    links: [
+      {
+        label: 'Project File 1',
+        url: 'https://drive.google.com/file/d/1QENvHAhvtSApYnsDaQCroTbauHsKAKCV/view?usp=drive_link',
+      },
+      {
+        label: 'Project File 2',
+        url: 'https://drive.google.com/file/d/1HtsfGuCTJsJmOOqYynXWlODgAfWwQa8y/view?usp=drive_link',
+      },
+      {
+        label: 'Project File 3',
+        url: 'https://drive.google.com/file/d/1v8l7apFztAyBkN9BPlTZPmlqu52kG8gS/view?usp=drive_link',
+      },
+      {
+        label: 'Project File 4',
+        url: 'https://drive.google.com/file/d/1zhSRhYO_Ez4uSZZz5DRKZTA7dTQaF0_s/view?usp=drive_link',
+      },
+    ],
   },
   {
     id: 'goeic',
@@ -169,6 +197,12 @@ export const projectsData = [
       'Documented glossary of terms, process flows, and required supporting documents for importer registry services.',
     ],
     tools: ['ARIS', 'ArchiMate', 'BPMN v2', 'Visio', 'Microsoft Excel'],
+    links: [
+      {
+        label: 'View Project File',
+        url: 'https://drive.google.com/file/d/1e2VWQ-xE3ygszalEBJHJ3gy-midA2FP6/view?usp=drive_link',
+      },
+    ],
   },
   {
     id: 'chemistry-admin',
@@ -206,6 +240,12 @@ export const projectsData = [
       'Documented business rules, control factors, laws, regulations, and non-functional requirements.',
     ],
     tools: ['ARIS', 'ArchiMate', 'BPMN v2', 'Visio', 'Microsoft Excel'],
+    links: [
+      {
+        label: 'View Project File',
+        url: 'https://drive.google.com/file/d/1mfpmrmzK7Qs4MWBEhvyeLb6vJgi9MP3j/view?usp=drive_link',
+      },
+    ],
   },
 ];
 

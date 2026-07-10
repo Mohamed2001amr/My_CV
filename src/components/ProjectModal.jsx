@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, ExternalLink, KeyRound } from 'lucide-react';
 
 export default function ProjectModal({ project, onClose }) {
   const [currentImage, setCurrentImage] = useState(0);
@@ -140,7 +140,7 @@ export default function ProjectModal({ project, onClose }) {
             </ul>
           </div>
 
-          <div className="mb-8">
+          <div className="mb-6">
             <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wide mb-3">
               Tools Used
             </h3>
@@ -155,6 +155,45 @@ export default function ProjectModal({ project, onClose }) {
               ))}
             </div>
           </div>
+
+          {project.links?.length > 0 && (
+            <div className="mb-6">
+              <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wide mb-3">
+                Project Files
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {project.links.map((link) => (
+                  <a
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-700 bg-blue-50 border border-blue-100 rounded-xl hover:bg-blue-100 transition-colors cursor-pointer"
+                  >
+                    <ExternalLink size={15} />
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {project.credentials && (
+            <div className="mb-6 p-4 bg-amber-50 border border-amber-100 rounded-xl">
+              <h3 className="text-sm font-semibold text-amber-800 uppercase tracking-wide mb-3 flex items-center gap-2">
+                <KeyRound size={15} />
+                Demo Login Credentials
+              </h3>
+              <div className="space-y-1.5 text-sm text-amber-900">
+                <p>
+                  <span className="font-semibold">Email:</span> {project.credentials.email}
+                </p>
+                <p>
+                  <span className="font-semibold">Password:</span> {project.credentials.password}
+                </p>
+              </div>
+            </div>
+          )}
 
           <div className="flex justify-between items-center pt-4 border-t border-slate-100 text-sm">
             <span className="text-slate-500">

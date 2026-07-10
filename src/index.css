@@ -35,3 +35,56 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #64748b;
 }
+
+/* ── Scroll reveal animations ── */
+.reveal {
+  opacity: 0;
+  transition-property: opacity, transform, filter;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform, filter;
+}
+
+.reveal-fade-up {
+  transform: translateY(48px);
+}
+
+.reveal-fade-down {
+  transform: translateY(-48px);
+}
+
+.reveal-fade-left {
+  transform: translateX(-56px);
+}
+
+.reveal-fade-right {
+  transform: translateX(56px);
+}
+
+.reveal-zoom {
+  transform: scale(0.88);
+}
+
+.reveal-blur {
+  transform: translateY(24px);
+  filter: blur(14px);
+}
+
+.reveal-popup {
+  transform: translateY(36px) scale(0.94);
+  filter: blur(6px);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}

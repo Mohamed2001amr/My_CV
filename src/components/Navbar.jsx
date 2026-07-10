@@ -27,7 +27,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <button
             onClick={() => handleNavClick('about')}
-            className="text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors"
+            className="text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors cursor-pointer"
           >
             MA
           </button>
@@ -37,7 +37,7 @@ export default function Navbar() {
               <button
                 key={link.id}
                 onClick={() => handleNavClick(link.id)}
-                className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
+                className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all cursor-pointer"
               >
                 {link.label}
               </button>
@@ -46,7 +46,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-slate-600 hover:text-blue-600 rounded-lg"
+            className="md:hidden p-2 text-slate-600 hover:text-blue-600 rounded-lg cursor-pointer"
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -59,7 +59,7 @@ export default function Navbar() {
               <button
                 key={link.id}
                 onClick={() => handleNavClick(link.id)}
-                className="block w-full text-left px-4 py-3 text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg"
+                className="block w-full text-left px-4 py-3 text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg cursor-pointer"
               >
                 {link.label}
               </button>
